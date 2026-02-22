@@ -41,27 +41,3 @@ Simply click **"Initialize Engine"** and say any of the following words to see t
 * **APIs**: Web Speech API (Recognition), Web Audio API (AnalyserNode)
 * **Styling**: CSS3 Glassmorphism
 
-## 💻 How to Run Locally
-
-1.  **Clone the Repository**:
-    ```bash
-    git clone [https://github.com/YOUR_USERNAME/cosmic-voice-heart.git](https://github.com/YOUR_USERNAME/cosmic-voice-heart.git)
-    ```
-2.  **Open with a Local Server**:
-    Because this project uses ES Modules and Microphone access, it **cannot** be opened by just double-clicking the `index.html` file. 
-    * Use the **Live Server** extension in VS Code.
-    * OR use Python: `python -m http.server 8000`
-3.  **Permissions**:
-    When the browser asks, click **"Allow"** for Microphone access.
-
----
-
-## 🧠 Behind the Math: Morphing Logic
-
-The morphing system uses **Linear Interpolation (LERP)**. Instead of teleporting particles, the code calculates the distance between the current `position` and the `target` shape coordinates, moving them a small percentage of that distance every frame ($0.03$ or $3\%$). This creates the smooth, "flowing" transition effect.
-
-
-
-```javascript
-// The core morphing math
-pos[i] += (target[i] - pos[i]) * lerpSpeed;
