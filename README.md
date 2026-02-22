@@ -1,27 +1,67 @@
-#**Core Features**
-Audio-Reactive Engine: Uses the Web Audio API to analyze Bass, Mids, and Treble in real-time.
+# 🌌 Cosmic Voice-Command Nebula
 
-Bass drives the heartbeat and formation speed.
+An interactive, high-performance 3D generative art piece built with **Three.js**. This project uses the **Web Speech API** and **Web Audio API** to transform your voice and music into a living, morphing galaxy of 30,000 particles.
 
-Mids influence the density and "glow" of the nebula cloud.
 
-Treble triggers rapid color cycling and lens distortion.
 
-#**Interactive Physics**:
+## 🚀 Key Features
 
-Vortex Mode: Particles swirl into a spiral galaxy based on audio intensity.
+* **🎙️ Voice-Activated Morphing**: Real-time speech recognition allows the nebula to change into 10 distinct shapes based on specific keywords.
+* **🔊 Audio-Reactive "Echo"**: Particles possess "Echo Environment" physics—they vibrate and jitter in response to your voice volume and background music frequencies.
+* **✨ Cinematic Visuals**: High-fidelity bloom, additive blending, and color-lerping transitions create an ethereal, cosmic atmosphere.
+* **🖱️ Orbital Control**: Fully interactive camera allowing users to zoom and rotate around the 3D structures.
 
-Mouse Gravity: Users can warp space by moving their cursor, repelling or attracting cosmic dust.
+---
 
-Cinematic Post-Processing: Utilizes UnrealBloomPass for ethereal glows and custom ShaderPass for chromatic aberration (lens bleeding).
+## 🗣️ Voice Commands & Shapes
 
-High Performance: Optimized particle rendering using BufferGeometry to ensure smooth 60FPS performance on modern browsers.
+Simply click **"Initialize Engine"** and say any of the following words to see the galaxy morph and change color:
 
-#**Tech Stack**
-Language: JavaScript (ES6+ Modules)
+| Command | Shape | Color |
+| :--- | :--- | :--- |
+| **"Heart"** | Parametric 3D Heart | ❤️ Red |
+| **"Moon"** | Crescent Curve | 🤍 White |
+| **"Star"** | 5-Pointed Star | ⭐ White |
+| **"Sun"** | Exploding Sphere | 💛 Bright Yellow |
+| **"Ring"** | 3D Torus | 🥈 Silver |
+| **"Cloud"** | Neon Clusters | 💠 Neon Cyan |
+| **"Bird"** | Flapping Wings | 💚 Green |
+| **"Flower"** | Rose Curve | 🌸 Pink |
+| **"Cake"** | 3D Cylinder | 🤎 Brown |
+| **"Galaxy"** | Random Cloud | 🌀 Cyan |
 
-Library: Three.js (WebGL)
 
-Audio: Web Audio API (AnalyserNode)
 
-Styling: CSS3 (Glassmorphism & Neon UI)
+---
+
+## 🛠️ Tech Stack
+
+* **Engine**: Three.js (WebGL)
+* **Language**: JavaScript (ES6 Modules)
+* **APIs**: Web Speech API (Recognition), Web Audio API (AnalyserNode)
+* **Styling**: CSS3 Glassmorphism
+
+## 💻 How to Run Locally
+
+1.  **Clone the Repository**:
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/cosmic-voice-heart.git](https://github.com/YOUR_USERNAME/cosmic-voice-heart.git)
+    ```
+2.  **Open with a Local Server**:
+    Because this project uses ES Modules and Microphone access, it **cannot** be opened by just double-clicking the `index.html` file. 
+    * Use the **Live Server** extension in VS Code.
+    * OR use Python: `python -m http.server 8000`
+3.  **Permissions**:
+    When the browser asks, click **"Allow"** for Microphone access.
+
+---
+
+## 🧠 Behind the Math: Morphing Logic
+
+The morphing system uses **Linear Interpolation (LERP)**. Instead of teleporting particles, the code calculates the distance between the current `position` and the `target` shape coordinates, moving them a small percentage of that distance every frame ($0.03$ or $3\%$). This creates the smooth, "flowing" transition effect.
+
+
+
+```javascript
+// The core morphing math
+pos[i] += (target[i] - pos[i]) * lerpSpeed;
