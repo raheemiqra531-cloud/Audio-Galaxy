@@ -1,92 +1,16 @@
-/* 1. Basic Reset & Space Background */
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Prevents scrollbars from appearing */
-    background-color: #010103; /* Deep space black */
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    color: white;
-}
-
-/* 2. The 3D Canvas */
-canvas {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1; /* Keeps the nebula behind the UI */
-}
-
-/* 3. The UI Overlay */
+body { margin: 0; overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; color: white; }
+canvas { display: block; position: fixed; top: 0; left: 0; z-index: 1; }
 #ui {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 10;
-    pointer-events: none; /* Allows you to "click through" the text to rotate the galaxy */
-    
-    /* Glassmorphism Effect */
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-    max-width: 80%;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center; z-index: 10; pointer-events: none;
+    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(15px);
+    padding: 30px; border-radius: 20px; border: 1px solid rgba(0, 234, 255, 0.3);
 }
-
-/* 4. Typography */
-h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    color: #00eaff; /* Cyan neon */
-    text-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
-}
-
-p {
-    margin: 20px 0;
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-}
-
-/* 5. The Interaction Button */
+h1 { margin: 0; color: #00eaff; letter-spacing: 5px; text-transform: uppercase; }
+p { font-size: 0.9rem; color: #ccc; margin: 15px 0; }
 button {
-    pointer-events: auto; /* Makes the button clickable while UI is transparent */
-    background: transparent;
-    border: 2px solid #00eaff;
-    color: #00eaff;
-    padding: 15px 40px;
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 50px;
-    margin-top: 10px;
+    pointer-events: auto; background: transparent; border: 2px solid #00eaff;
+    color: #00eaff; padding: 12px 30px; cursor: pointer; font-weight: bold;
+    border-radius: 50px; transition: 0.3s;
 }
-
-button:hover {
-    background: #00eaff;
-    color: #010103;
-    box-shadow: 0 0 30px #00eaff;
-    transform: scale(1.05);
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-/* 6. Mobile Optimization */
-@media (max-width: 600px) {
-    h1 { font-size: 1.5rem; }
-    #ui { width: 85%; padding: 20px; }
-}
+button:hover { background: #00eaff; color: black; box-shadow: 0 0 20px #00eaff; }
