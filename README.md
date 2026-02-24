@@ -1,43 +1,88 @@
-# 🌌 Cosmic Voice-Command Nebula
+# 🌌 Voice-Command Cosmic Nebula
 
-An interactive, high-performance 3D generative art piece built with **Three.js**. This project uses the **Web Speech API** and **Web Audio API** to transform your voice and music into a living, morphing galaxy of 30,000 particles.
-
-
-
-## 🚀 Key Features
-
-* **🎙️ Voice-Activated Morphing**: Real-time speech recognition allows the nebula to change into 10 distinct shapes based on specific keywords.
-* **🔊 Audio-Reactive "Echo"**: Particles possess "Echo Environment" physics—they vibrate and jitter in response to your voice volume and background music frequencies.
-* **✨ Cinematic Visuals**: High-fidelity bloom, additive blending, and color-lerping transitions create an ethereal, cosmic atmosphere.
-* **🖱️ Orbital Control**: Fully interactive camera allowing users to zoom and rotate around the 3D structures.
+An immersive, high-performance 3D particle engine built with **Three.js**. This project transforms a sentient cloud of 30,000 particles into various geometric and organic forms using real-time **Voice Recognition** and **Audio Frequency Analysis**.
 
 ---
 
-## 🗣️ Voice Commands & Shapes
+## 🚀 Key Features
 
-Simply click **"Initialize Engine"** and say any of the following words to see the galaxy morph and change color:
-
-| Command | Shape | Color |
-| :--- | :--- | :--- |
-| **"Heart"** | Parametric 3D Heart | ❤️ Red |
-| **"Moon"** | Crescent Curve | 🤍 White |
-| **"Star"** | 5-Pointed Star | ⭐ White |
-| **"Sun"** | Exploding Sphere | 💛 Bright Yellow |
-| **"Ring"** | 3D Torus | 🥈 Silver |
-| **"Cloud"** | Neon Clusters | 💠 Neon Cyan |
-| **"Bird"** | Flapping Wings | 💚 Green |
-| **"Flower"** | Rose Curve | 🌸 Pink |
-| **"Cake"** | 3D Cylinder | 🤎 Brown |
-| **"Galaxy"** | Random Cloud | 🌀 Cyan |
-
-
+* **Vocal Morphing**: Transition between 10+ complex 3D shapes using the Web Speech API.
+* **Audio-Reactive Dynamics**: Particle jitter and "Bloom" glow intensity are synchronized to your voice or background music.
+* **Mathematical Geometries**:
+    * **Full Moon**: Spherical point distribution.
+    * **Horizontal DNA**: Double-helix spiral math.
+    * **Gold Pyramid**: Solid-volume barycentric tetrahedron.
+* **Cinematic Rendering**: Uses `UnrealBloomPass` for a high-end holographic glow and additive blending for deep space aesthetics.
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Engine**: Three.js (WebGL)
-* **Language**: JavaScript (ES6 Modules)
-* **APIs**: Web Speech API (Recognition), Web Audio API (AnalyserNode)
+* **Core**: [Three.js](https://threejs.org/) (WebGL)
+* **APIs**: 
+    * `Web Speech API` (SpeechRecognition)
+    * `Web Audio API` (AnalyserNode)
+* **Framework**: Vanilla JavaScript (ES6 Modules)
 * **Styling**: CSS3 Glassmorphism
 
+---
+
+## 🎙️ Voice Commands
+
+Once the engine is initialized, speak any of the following keywords:
+
+| Keyword | Resulting Shape | Color Theme |
+| :--- | :--- | :--- |
+| **"Heart"** | Refined Parametric Heart | Neon Red |
+| **"Moon"** | 3D Sphere | Celestial White |
+| **"DNA"** | Horizontal Double Helix | Cyan / Teal |
+| **"Pyramid"** | Solid Tetrahedron | Liquid Gold |
+| **"Sun"** | Exploding Star | Solar Yellow |
+| **"Ring"** | 3D Torus | Chrome Silver |
+| **"Cloud"** | Volumetric Nebula | Aqua Marine |
+| **"Flower"** | Rose Curve | Pink |
+| **"Cake"** | 3D Cylinder | Earthy Brown |
+| **"Galaxy"** | Random Particle Field | Cosmic Blue |
+
+---
+
+## 📥 Installation
+
+1.  **Clone the Repository**:
+    ```bash
+    git clone [https://github.com/your-username/voice-galaxy.git](https://github.com/your-username/voice-galaxy.git)
+    ```
+2.  **File Structure**:
+    Ensure the following files are in the same directory:
+    * `index.html`
+    * `main.js`
+    * `styles.css`
+
+3.  **Run via Local Server**:
+    Because the browser requires a "Secure Context" for Microphone access, you must run this via a server (not just double-clicking the file).
+    * **VS Code**: Use the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension.
+    * **Python**: Run `python -m http.server 8000` in your terminal.
+
+---
+
+## 🎮 How to Use
+
+1.  Open the application in **Google Chrome** (recommended for best speech support).
+2.  Click **"INITIALIZE ENGINE"** to start the audio and visual context.
+3.  Say **"DNA"** or any other command to see the nebula morph.
+4.  Use the **"COMMANDS"** button in the top-right corner to toggle the menu overlay.
+5.  **Interact**: Click and drag your mouse to rotate the galaxy in 3D space.
+
+---
+
+## ⚠️ Troubleshooting
+
+* **Mic Not Working**: Ensure you have granted microphone permissions in the browser address bar.
+* **Not Morphing**: Check the **Console (F12)**. If the browser is mishearing your commands, it will print `I heard: [word]`. You can add common misheard words to the `main.js` logic.
+* **Blank Screen**: Ensure you are connected to the internet to load the Three.js libraries from the CDN.
+
+---
+
+## 📜 License
+
+This project is open-source and available under the **MIT License**.
